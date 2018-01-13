@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_marginBottom="8dp">
+    <com.makeramen.roundedimageview.RoundedImageView
+        android:id="@+id/riv_new_opened"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        app:riv_corner_radius="8dp"
+        android:src="@drawable/img_dummy_new_and_trending"/>
+    <TextView
+        android:id="@+id/tv_food_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Misato"
+        style="@style/text_style_in_new_and_trending"
+        android:layout_toRightOf="@id/riv_new_opened"
+        android:layout_marginLeft="8dp"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Faw Away"
+        android:textSize="10sp"
+        android:textColor="@color/secondary_text"
+        android:layout_alignLeft="@id/tv_food_name"
+        android:layout_below="@id/tv_food_name"/>
+
+</RelativeLayout>

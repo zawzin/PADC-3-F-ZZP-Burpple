@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView android:id="@+id/cv_promotion"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="160dp"
+    android:layout_height="250dp"
+    android:layout_marginBottom="48dp"
+    android:layout_marginStart="8dp"
+    android:layout_marginEnd="8dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardElevation="4dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <ImageView
+        android:id="@+id/iv_promotion_image"
+        android:layout_width="160dp"
+        android:layout_height="200dp"
+        android:src="@drawable/img_dummy_promotion"
+        android:scaleType="centerCrop"
+        android:foreground="@color/black_30"/>
+
+        <FrameLayout
+            android:id="@+id/fl_text"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@color/accent"
+            android:layout_below="@id/iv_promotion_image">
+            <TextView
+                android:id="@+id/tv_shop_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Pork and Wonbok Linguine"
+                android:textColor="@color/white_full"
+                android:textSize="14sp"
+                android:layout_marginTop="8dp"
+                android:layout_marginLeft="16dp"
+                android:lines="1"
+                android:ellipsize="end"/>
+
+            <TextView
+                android:id="@+id/tv_shop_area"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Kent Ridge"
+                android:textColor="@color/white_full"
+                android:layout_marginTop="28dp"
+                android:layout_marginLeft="16dp"
+                android:textSize="10sp"/>
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/tv_promotion_until"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TILL 31AR JAN '18"
+            android:textSize="12sp"
+            android:textColor="@color/white_full"
+            android:layout_marginLeft="16dp"
+            android:layout_above="@id/fl_text"
+            android:layout_marginBottom="8dp"/>
+        <View
+            android:id="@+id/v_divider"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/divider"
+            android:layout_above="@id/tv_promotion_until"
+            android:layout_marginBottom="8dp"
+            android:layout_marginLeft="16dp"/>
+        <TextView
+            android:id="@+id/tv_promotion_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="20% Off Total Bill"
+            android:layout_above="@id/v_divider"
+            android:layout_margin="16dp"
+            android:textSize="20sp"
+            android:textColor="@color/white_full"/>
+        <TextView
+            android:id="@+id/lbl_burpple_exclusive"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="burpple exclusive"
+            android:layout_above="@id/tv_promotion_title"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/rounded_border"
+            android:padding="4dp"
+            android:textAllCaps="true"
+            android:textColor="@color/white_full"
+            android:textSize="10sp"
+            android:textStyle="bold"
+            android:letterSpacing="0.1"/>
+    </RelativeLayout>
+</android.support.v7.widget.CardView>

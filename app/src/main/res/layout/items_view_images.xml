@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xyz.zzp.burpple.viewitems.HighlightImagesView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <ImageView
+        android:id="@+id/iv_feature_img"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/img_dummy_highlight"
+        android:foreground="@color/transparent_black"
+        android:scaleType="centerCrop"
+        />
+    <TextView
+        android:id="@+id/tv_feature_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Title"
+        android:layout_above="@id/tv_feature_desc"
+        android:layout_centerHorizontal="true"
+        style="@style/white_text_black_border"
+        android:textColor="@color/white_full"
+        android:textSize="32sp"
+        android:fontFamily="serif-monospace"
+        android:layout_marginBottom="8dp"
+        />
+    <TextView
+        android:id="@+id/tv_feature_desc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Description "
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="24dp"
+        android:paddingHorizontal="16dp"
+        style="@style/white_text_black_border"
+        android:textColor="@color/white_full"
+        android:textSize="20sp"
+        android:fontFamily="monospace"
+        android:textAlignment="center"/>
+    <TextView
+        android:id="@+id/tv_feature_tag"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="community"
+        android:textAllCaps="true"
+        android:textColor="@color/primary"
+        android:layout_above="@id/tv_feature_title"
+        android:textSize="12sp"
+        android:background="@drawable/border"
+        android:paddingHorizontal="4dp"
+        android:textStyle="bold"
+        android:letterSpacing="0.1"
+        android:layout_marginBottom="16dp"
+        android:layout_centerHorizontal="true"/>
+
+</xyz.zzp.burpple.viewitems.HighlightImagesView>
