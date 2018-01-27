@@ -1,4 +1,11 @@
 <resources>
     <string name="app_name">Burpple</string>
     <string name="action_settings">Settings</string>
+
+    <string name="login_form">Login Form</string>
+    <string name="sign_up_form">Sign up form</string>
+    <string name="cb_sign_up_form">I agree to <b>Terms</b> and <b>Privacy Policy</b></string>
+
+    <string name="menu_fav_food">Favourite Foods</string>
+    <string name="menu_fav_place">Favourite Places</string>
 </resources>

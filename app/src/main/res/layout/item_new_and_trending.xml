@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="180dp"
+    android:layout_width="160dp"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_marginLeft="8dp"
-    android:layout_marginTop="32dp"
+    android:layout_marginTop="@dimen/margin_xlarge"
     android:layout_marginBottom="48dp"
     app:cardElevation="8dp">
 
@@ -16,11 +16,10 @@
             android:id="@+id/tv_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="24dp"
+            android:layout_margin="@dimen/margin_medium_2"
             android:text="Newly Opened"
             android:textColor="@color/primary"
-            android:textSize="18sp"
-            android:layout_marginBottom="16dp"/>
+            android:textSize="18sp"/>
         <android.support.v7.widget.RecyclerView
             android:id="@+id/rv_new_opened"
             android:layout_width="wrap_content"

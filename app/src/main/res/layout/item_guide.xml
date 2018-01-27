@@ -8,10 +8,51 @@
     android:layout_marginLeft="8dp"
     android:layout_marginRight="8dp">
 
-    <ImageView
-        android:id="@+id/iv_guide_img"
+    <RelativeLayout
+        android:id="@+id/fl_guide"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:src="@drawable/img_dummy_guide"
-        android:scaleType="centerCrop"/>
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/iv_guide_img"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/img_dummy_guide"
+            android:foreground="@color/transparent_black"
+            android:scaleType="centerCrop"/>
+        <TextView
+            android:id="@+id/tv_guide_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Tastemakers Guide to Best Hawkers in Chinatown"
+            android:textColor="@color/white_full"
+            android:paddingHorizontal="16dp"
+            android:layout_marginBottom="4dp"
+            android:layout_above="@id/fl_burpple"
+            android:textAlignment="center"
+            android:textSize="16sp"
+            android:fontFamily="cursive"/>
+        <FrameLayout
+            android:id="@+id/fl_burpple"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="32dp">
+            <ImageView
+                android:id="@+id/iv_burpple"
+                android:layout_width="16dp"
+                android:layout_height="16dp"
+                android:src="@drawable/burpple"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="burpple"
+                android:textColor="@color/white_full"
+                android:textSize="10sp"
+                android:textStyle="bold"
+                android:layout_marginLeft="18dp"/>
+
+        </FrameLayout>
+    </RelativeLayout>
 </android.support.v7.widget.CardView>

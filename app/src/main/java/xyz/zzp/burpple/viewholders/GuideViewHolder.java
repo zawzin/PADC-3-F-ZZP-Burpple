@@ -3,6 +3,7 @@ package xyz.zzp.burpple.viewholders;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 
@@ -20,6 +21,9 @@ public class GuideViewHolder extends RecyclerView.ViewHolder {
     @BindView(R.id.iv_guide_img)
     ImageView ivGuideImage;
 
+    @BindView(R.id.tv_guide_title)
+    TextView tvGuideTitle;
+
     public GuideViewHolder(View itemView) {
         super(itemView);
         ButterKnife.bind(this,itemView);
@@ -28,5 +32,6 @@ public class GuideViewHolder extends RecyclerView.ViewHolder {
         Glide.with(ivGuideImage.getContext())
                 .load(guide.getImage())
                 .into(ivGuideImage);
+        tvGuideTitle.setText(guide.getTitle());
     }
 }

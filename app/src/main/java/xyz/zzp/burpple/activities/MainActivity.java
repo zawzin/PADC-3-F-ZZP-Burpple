@@ -1,7 +1,10 @@
 package xyz.zzp.burpple.activities;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.support.design.widget.NavigationView;
 import android.support.v4.view.ViewPager;
+import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
@@ -22,12 +25,16 @@ import xyz.zzp.burpple.adapters.NewFoodAdapter;
 import xyz.zzp.burpple.adapters.PromotionAdapter;
 import xyz.zzp.burpple.data.model.FeatureModel;
 import xyz.zzp.burpple.data.model.GuideModel;
+import xyz.zzp.burpple.data.model.LoginUserModel;
 import xyz.zzp.burpple.data.model.PromotionModel;
+import xyz.zzp.burpple.delegates.BeforeLoginUserDelegate;
+import xyz.zzp.burpple.delegates.LoginUserDelegate;
 import xyz.zzp.burpple.events.LoadedFeatureEvent;
 import xyz.zzp.burpple.events.LoadedGuideEvent;
 import xyz.zzp.burpple.events.LoadedPromotionEvent;
+import xyz.zzp.burpple.viewpods.AccountControlViewPod;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements LoginUserDelegate,BeforeLoginUserDelegate{
 
     @BindView(R.id.vp_images)
     ViewPager vpImages;
@@ -43,6 +50,14 @@ public class MainActivity extends AppCompatActivity {
 
     @BindView(R.id.rv_new_and_trending)
     RecyclerView rvNewAndTrending;
+
+    @BindView(R.id.navigation_view)
+    NavigationView navigationView;
+
+    @BindView(R.id.drawer_layout)
+    DrawerLayout drawerLayout;
+
+    private AccountControlViewPod vpAccountControl;
 
     private HighlightImagesAdapter mHighlightImagesAdapter;
     private PromotionAdapter mPromotionAdapter;
@@ -82,6 +97,10 @@ public class MainActivity extends AppCompatActivity {
         rvNewAndTrending.setLayoutManager(lLmNewAndTrending);
         rvNewAndTrending.setAdapter(mNewAndTrendingAdapter);
 
+        vpAccountControl = (AccountControlViewPod) navigationView.getHeaderView(0);
+        vpAccountControl.setDelegate((BeforeLoginUserDelegate)this);
+        vpAccountControl.setDelegate((LoginUserDelegate)this);
+
         FeatureModel.getsObjectInstance().loadFeature();
         PromotionModel.getsObjectInstance().loadPromotion();
         GuideModel.getsObjectInstance().loadGuide();
@@ -110,5 +129,22 @@ public class MainActivity extends AppCompatActivity {
     @Subscribe(threadMode = ThreadMode.MAIN)
     public void loadGuide(LoadedGuideEvent loadedGuideEvent){
         mGuideAdapter.setGuide(loadedGuideEvent.getGuidelist());
+    }
+
+    @Override
+    public void onTaptoLogout() {
+        LoginUserModel.getsObjectInstance().logOut();
+    }
+
+    @Override
+    public void onTapToLogin() {
+        Intent intent = AccountControlActivity.newInterntLogin(getApplicationContext());
+        startActivity(intent);
+    }
+
+    @Override
+    public void onTapToRegister() {
+        Intent intent = AccountControlActivity.newInterntRegister(getApplicationContext());
+        startActivity(intent);
     }
 }
